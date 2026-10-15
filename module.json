@@ -2,8 +2,8 @@
   "id": "wod20-dice-improvements",
   "type": "module",
   "title": "WoD20 Dice Improvements",
-  "description": "Formats native WoD20 chat roll results for successes, zero successes, and botches in light and dark themes. Does not calculate or award Paradox.",
-  "version": "0.1.0",
+  "description": "Styles native WoD20 rolls and restores Mage Paradox dice highlighting, detection, and manual Add/Ignore resolution when the former Paradox module is disabled.",
+  "version": "0.2.0",
   "authors": [
     {
       "name": "rebsiot",
@@ -26,12 +26,13 @@
     "src/main.js"
   ],
   "styles": [
-    "styles/roll-result-formatting.css"
+    "styles/roll-result-formatting.css",
+    "styles/paradox.css"
   ],
   "url": "https://github.com/rebsiot/wod20-dice-improvements",
   "readme": "README.md",
   "changelog": "https://github.com/rebsiot/wod20-dice-improvements/blob/main/CHANGELOG.md",
   "bugs": "https://github.com/rebsiot/wod20-dice-improvements/issues",
   "manifest": "https://github.com/rebsiot/wod20-dice-improvements/releases/latest/download/module.json",
-  "download": "https://github.com/rebsiot/wod20-dice-improvements/releases/download/v0.1.0/wod20-dice-improvements-0.1.0.zip"
+  "download": "https://github.com/rebsiot/wod20-dice-improvements/releases/download/v0.2.0/wod20-dice-improvements-0.2.0.zip"
 }
