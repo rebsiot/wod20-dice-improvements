@@ -12,7 +12,7 @@ This is a NEW, installable module providing native WoD20 chat-card styling. It w
 ## Install using Foundry Setup
 Setup → Add-on Modules → Install Module → Manifest URL:
 
-`https://raw.githubusercontent.com/rebsiot/wod20-dice-improvements/main/module.json`
+`https://github.com/rebsiot/wod20-dice-improvements/releases/latest/download/module.json`
 
 Enable **WoD20 Dice Improvements** in Manage Modules in the intended World of Darkness 20 world, then hard-refresh.
 For manual ZIP installation: stop Foundry, extract to the module folder named `wod20-dice-improvements` inside `Z:\Data\modules`, verify that `module.json` is immediately inside this folder, restart Foundry and enable the module.
