@@ -1,1 +1,7 @@
-{"private":true,"type":"module","scripts":{"test":"node tests/roll-result-formatting.test.js"}}
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/roll-result-formatting.test.js && node tests/runtime-hook.test.js"
+  }
+}
