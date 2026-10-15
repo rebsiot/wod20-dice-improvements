@@ -1,0 +1,50 @@
+name: Publish WoD20 Dice Improvements
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - module.json
+      - src/**
+      - styles/**
+      - .github/workflows/release.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  package-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check JavaScript and test runtime
+        run: |
+          node --check src/main.js
+          node --check src/roll-result-formatting.js
+          npm test
+      - name: Package installable Foundry module
+        id: pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(node -p 'require("./module.json").version')
+          archive="wod20-dice-improvements-${version}.zip"
+          zip -q "$archive" module.json src/main.js src/roll-result-formatting.js styles/roll-result-formatting.css README.md CHANGELOG.md MIGRATION-NOTES.md
+          echo "tag=v${version}" >> "$GITHUB_OUTPUT"
+          echo "archive=${archive}" >> "$GITHUB_OUTPUT"
+          unzip -l "$archive"
+      - name: Publish tagged GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          tag="${{ steps.pack.outputs.tag }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists; bump module version for a new release."
+            exit 0
+          fi
+          gh release create "$tag" "${{ steps.pack.outputs.archive }}" module.json \
+            --target "$GITHUB_SHA" --title "$tag" --notes-file CHANGELOG.md
