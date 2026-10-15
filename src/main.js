@@ -1,8 +1,9 @@
 /**
- * WoD20 Dice Improvements v0.1.0
- * Presentation-only Foundry module. No roll or Paradox processing.
+ * WoD20 Dice Improvements v0.2.0
+ * Native WoD20 roll-result formatting plus transferred Paradox lifecycle.
  */
 import { formatWoD20RollResult } from "./roll-result-formatting.js";
+import "./paradox.js";
 
 const MODULE_ID = "wod20-dice-improvements";
 
