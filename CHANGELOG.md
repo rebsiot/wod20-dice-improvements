@@ -1,8 +1,9 @@
 # Changelog
 
-## Source migration baseline — 2026-10-15 (unversioned)
-- Created dedicated Dice Improvements repository documentation.
-- Isolated existing generic WoD20 result classification code and light/dark formatting CSS from user-provided Paradox sources as reference material.
-- No changes to installed Foundry modules, Actor data, Paradox processing, or production hooks.
-- Added mock tests. Live Foundry testing still pending.
-- Awaiting full source of the existing Dice Improvements module and its original manifest before issuing a release.
+## v0.1.0 — 2026-10-15
+- Added: standalone Foundry v14 module manifest, active chat-render hook, installable ZIP and dark/light styling.
+- Preserved: native WoD20 rolls/ChatMessages. No Paradox or Actor modifications.
+- Version: new independently versioned module; not an upgrade to unrecovered older Dice Improvements source.
+- Tests: JS syntax, mock classification and render-hook tests, manifest and ZIP structure. Live Foundry testing NOT performed.
+- Limitations: English `Successes:` markup, possible styling overlap with Paradox module. No Paradox generation/Add/Ignore.
+- Rollback: disable this module; back up any pre-existing module before replacing it.
