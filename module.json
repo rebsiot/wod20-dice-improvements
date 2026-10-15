@@ -1,0 +1,37 @@
+{
+  "id": "wod20-dice-improvements",
+  "type": "module",
+  "title": "WoD20 Dice Improvements",
+  "description": "Formats native WoD20 chat roll results for successes, zero successes, and botches in light and dark themes. Does not calculate or award Paradox.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "rebsiot",
+      "url": "https://github.com/rebsiot"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "worldofdarkness",
+        "type": "system"
+      }
+    ]
+  },
+  "esmodules": [
+    "src/main.js"
+  ],
+  "styles": [
+    "styles/roll-result-formatting.css"
+  ],
+  "url": "https://github.com/rebsiot/wod20-dice-improvements",
+  "readme": "README.md",
+  "changelog": "https://github.com/rebsiot/wod20-dice-improvements/blob/main/CHANGELOG.md",
+  "bugs": "https://github.com/rebsiot/wod20-dice-improvements/issues",
+  "manifest": "https://raw.githubusercontent.com/rebsiot/wod20-dice-improvements/main/module.json",
+  "download": "https://raw.githubusercontent.com/rebsiot/wod20-dice-improvements/main/releases/wod20-dice-improvements-0.1.0.zip"
+}
