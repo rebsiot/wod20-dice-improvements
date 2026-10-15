@@ -1,0 +1,53 @@
+/* Reference-only extraction of generic WoD20 roll-result styling from
+ * user-provided wod20-paradox/paradox.css (2026-10-15).
+ * Do not load alongside the original generic styling without checking duplication.
+ */
+.wod20-roll .tray-success-area {
+  box-sizing:border-box;width:100%;min-height:44px;margin:8px 0 10px;
+  padding:8px 12px;display:flex;align-items:center;justify-content:center;
+  gap:8px;border:2px solid;border-radius:6px;font-size:20px;
+  font-weight:700;line-height:1.2;text-align:center;
+}
+.theme-dark .wod20-roll .tray-success-area {
+  border-color:rgba(190,190,190,.75);background:rgba(255,255,255,.06);color:#f2f2f2;
+}
+.theme-dark .wod20-roll .tray-success-area.wod20-result-success {
+  border-color:#4fae61;background:rgba(20,80,35,.28);color:#81d98d!important;
+}
+.theme-dark .wod20-roll .tray-success-area.wod20-result-success * {
+  color:#81d98d!important;
+}
+.theme-dark .wod20-roll .tray-success-area.wod20-result-zero {
+  border-color:#b94a43;background:rgba(105,20,20,.28);color:#e78b84!important;
+}
+.theme-dark .wod20-roll .tray-success-area.wod20-result-zero * {
+  color:#e78b84!important;
+}
+.theme-dark .wod20-roll .tray-success-area .danger {color:#ff7070!important;}
+.theme-dark .wod20-roll .tray-success-area:has(.danger) {
+  border-color:#e65a5a;background:rgba(120,0,0,.25);
+}
+.theme-light .wod20-roll .tray-success-area {
+  border-color:#777;background:#eee;color:#222;
+}
+.theme-light .wod20-roll .tray-success-area.wod20-result-success {
+  border-color:#287a36;background:#e4f2e6;color:#185c27!important;
+}
+.theme-light .wod20-roll .tray-success-area.wod20-result-success * {
+  color:#185c27!important;
+}
+.theme-light .wod20-roll .tray-success-area.wod20-result-zero {
+  border-color:#a52e2e;background:#f6e2e2;color:#8d2020!important;
+}
+.theme-light .wod20-roll .tray-success-area.wod20-result-zero * {
+  color:#8d2020!important;
+}
+.theme-light .wod20-roll .tray-success-area .danger {color:#8d2020!important;}
+.theme-light .wod20-roll .tray-success-area:has(.danger) {
+  border-color:#a52e2e;background:#f6e2e2;
+}
+.wod20-roll .tray-success-area .danger {
+  display:inline-block;font-size:22px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.05em;
+}
+.wod20-roll .tray-success-area:has(.danger) {border-width:3px;}
