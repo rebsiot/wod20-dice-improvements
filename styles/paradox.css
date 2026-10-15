@@ -1,0 +1,63 @@
+/* WoD20 Dice Improvements v0.2.0 — Paradox appearance migrated from
+   the user's existing wod20-paradox/paradox.css. */
+.wod20-paradox-die {
+  outline: none !important;
+  border: none !important;
+  filter: grayscale(1) brightness(0.68) contrast(1.75)
+    drop-shadow(0 0 0.6px rgba(255,255,255,0.35));
+}
+.wod20-paradox-result {
+  box-sizing:border-box;width:100%;margin-top:8px;padding:10px 12px;
+  border:2px solid;border-radius:6px;font-size:15px;line-height:1.35;
+}
+.theme-dark .wod20-paradox-result {
+  border-color:#a83a32;background:rgba(90,15,15,0.25);color:#eee;
+}
+.theme-dark .wod20-paradox-result strong {color:#fff;}
+.theme-light .wod20-paradox-result {
+  border-color:#a83232;background:#f3e3e3;color:#292020;
+}
+.theme-light .wod20-paradox-result strong {color:#731b1b;}
+.wod20-paradox-prompt {display:flex;flex-direction:column;gap:6px;}
+.wod20-paradox-heading {font-size:17px;font-weight:700;}
+.theme-dark .wod20-paradox-prompt {color:#f3f3f3;}
+.theme-dark .wod20-paradox-heading {color:#fff;}
+.theme-light .wod20-paradox-prompt {color:#292020;}
+.theme-light .wod20-paradox-heading {color:#731b1b;}
+.wod20-paradox-readonly,.wod20-paradox-max {
+  margin-top:4px;font-size:13px;font-style:italic;opacity:0.8;
+}
+.wod20-paradox-buttons {display:flex;gap:8px;margin-top:8px;}
+.wod20-paradox-buttons button {
+  flex:1;min-height:32px;padding:6px 10px;border:1px solid;
+  border-radius:5px;font-weight:700;text-shadow:none;box-shadow:none;
+  cursor:pointer;transition:background .15s ease,border-color .15s ease,transform .05s ease;
+}
+.wod20-paradox-buttons button:active {transform:translateY(1px);}
+.theme-dark .wod20-paradox-add {
+  background:#3b2d12!important;color:#ffe7a3!important;border-color:#8a6b1f!important;
+}
+.theme-dark .wod20-paradox-add:hover {
+  background:#53401b!important;color:#fff0c4!important;border-color:#b58b28!important;
+}
+.theme-dark .wod20-paradox-ignore {
+  background:#2a2a2f!important;color:#e8e8e8!important;border-color:#666!important;
+}
+.theme-dark .wod20-paradox-ignore:hover {
+  background:#3a3a42!important;color:#fff!important;border-color:#8a8a8a!important;
+}
+.theme-light .wod20-paradox-add {
+  background:#fff2bf!important;color:#5a4300!important;border-color:#947000!important;
+}
+.theme-light .wod20-paradox-add:hover {
+  background:#ffe899!important;color:#3d2d00!important;border-color:#765900!important;
+}
+.theme-light .wod20-paradox-ignore {
+  background:#e7e7e9!important;color:#252529!important;border-color:#77777d!important;
+}
+.theme-light .wod20-paradox-ignore:hover {
+  background:#d5d5d8!important;color:#111!important;border-color:#55555a!important;
+}
+.wod20-paradox-buttons button:disabled {
+  opacity:.55;cursor:default;transform:none;
+}
