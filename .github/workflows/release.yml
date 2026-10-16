@@ -22,6 +22,8 @@ jobs:
         run: |
           node --check src/main.js
           node --check src/roll-result-formatting.js
+          node --check src/speaker-accent.js
+          node --check src/paradox.js
           npm test
       - name: Package installable Foundry module
         id: pack
@@ -30,7 +32,7 @@ jobs:
           set -euo pipefail
           version=$(node -p 'require("./module.json").version')
           archive="wod20-dice-improvements-${version}.zip"
-          zip -q "$archive" module.json src/main.js src/roll-result-formatting.js src/paradox.js styles/roll-result-formatting.css styles/paradox.css styles/compact-roll-cards.css README.md CHANGELOG.md MIGRATION-NOTES.md
+          zip -q "$archive" module.json src/main.js src/roll-result-formatting.js src/speaker-accent.js src/paradox.js styles/roll-result-formatting.css styles/paradox.css styles/compact-roll-cards.css README.md CHANGELOG.md MIGRATION-NOTES.md
           echo "tag=v${version}" >> "$GITHUB_OUTPUT"
           echo "archive=${archive}" >> "$GITHUB_OUTPUT"
           unzip -l "$archive"
