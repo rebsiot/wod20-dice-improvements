@@ -1,4 +1,4 @@
-/* WoD20 Dice Improvements v0.2.1
+/* WoD20 Dice Improvements v0.2.2
  * Compact native WoD20 dice chat cards without changing message content,
  * roll data, dice order, Paradox markup, or chat controls.
  * Foundry v14 uses Chromium; :has() is supported.
@@ -8,17 +8,17 @@
    Non-roll chat and narrative-only WoD20 cards remain unchanged. */
 :is(#chat, #chat-notifications, #ui-right-column-1)
   .message:has(.wod20-roll .tray-roll-area) {
-    padding: 3px 5px 4px !important;
-    margin: 2px 0 !important;
+    padding: 4px 6px 5px !important;
+    margin: 3px 0 !important;
 }
 
 :is(#chat, #chat-notifications, #ui-right-column-1)
   .message:has(.wod20-roll .tray-roll-area) .message-header {
     min-height: 0;
-    margin: 0 0 3px !important;
-    padding: 2px 4px !important;
-    font-size: 12px !important;
-    line-height: 1.2 !important;
+    margin: 0 0 4px !important;
+    padding: 3px 5px !important;
+    font-size: 14px !important;
+    line-height: 1.25 !important;
     border-bottom-width: 1px !important;
 }
 
@@ -38,8 +38,8 @@
 
 .wod20-roll:has(.tray-roll-area) .tray-title-area {
     margin: 0 0 3px !important;
-    padding: 1px 1px 3px !important;
-    font-size: 16px !important;
+    padding: 2px 1px 3px !important;
+    font-size: 19px !important;
     line-height: 1.2 !important;
 }
 
@@ -48,11 +48,11 @@
     flex-wrap: wrap;
     align-items: baseline;
     column-gap: 9px;
-    row-gap: 2px;
+    row-gap: 3px;
     margin: 0 0 3px !important;
     padding: 0 1px !important;
-    font-size: 12px;
-    line-height: 1.2;
+    font-size: 14px;
+    line-height: 1.25;
 }
 
 .wod20-roll:has(.tray-roll-area) .tray-info-area > .tray-action-area {
@@ -80,19 +80,19 @@
 }
 
 .wod20-roll .tray-roll-area .tray-success-area {
-    min-height: 28px;
-    margin: 2px 0 3px !important;
-    padding: 3px 7px !important;
+    min-height: 34px;
+    margin: 3px 0 4px !important;
+    padding: 4px 8px !important;
     border-width: 2px;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.15;
     gap: 4px;
 }
 
 .wod20-roll .tray-roll-area .tray-success-area .danger {
-    font-size: 15px;
+    font-size: 18px;
     letter-spacing: 0.03em;
 }
 
@@ -100,7 +100,7 @@
     border-width: 2px;
 }
 
-/* Six standard d10 faces now fit on one row in a typical 280px chat card,
+/* Six standard d10 faces can fit on one row in a typical 280px chat card,
    preventing the orphan sixth die seen in the original screenshot.
    Do not transform/filter dice; Paradox's grayscale filter still applies. */
 .wod20-roll .tray-roll-area .tray-success-area + div,
@@ -110,7 +110,7 @@
     align-items: center;
     justify-content: flex-start;
     align-content: flex-start;
-    gap: 1px 2px;
+    gap: 2px 1px;
     margin: 0 !important;
     padding: 0;
     line-height: 0;
@@ -118,10 +118,10 @@
 
 .wod20-roll .tray-roll-area img.wod-svg {
     display: block;
-    flex: 0 0 38px;
-    width: 38px !important;
-    height: 38px !important;
-    max-width: 38px;
+    flex: 0 0 45px;
+    width: 45px !important;
+    height: 45px !important;
+    max-width: 45px;
     float: none !important;
     margin: 0 !important;
 }
@@ -137,15 +137,35 @@
 .wod20-roll .wod20-paradox-result {
     margin-top: 4px;
     padding: 6px 8px;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.25;
 }
 
 .wod20-roll .wod20-paradox-prompt { gap: 3px; }
-.wod20-roll .wod20-paradox-heading { font-size: 14px; }
+.wod20-roll .wod20-paradox-heading { font-size: 16px; }
 .wod20-roll .wod20-paradox-buttons { gap: 6px; margin-top: 4px; }
 .wod20-roll .wod20-paradox-buttons button {
-    min-height: 30px;
-    padding: 4px 6px;
-    font-size: 12px;
+    min-height: 34px;
+    padding: 5px 7px;
+    font-size: 14px;
+}
+
+/* A quiet player-color cue in the speaker header only. The module supplies
+   the author color from Foundry User.color, strictly validated as CSS hex.
+   No card-wide tint, altered die colors, or reduced text contrast. */
+:is(#chat, #chat-notifications, #ui-right-column-1)
+  .message.wod20-roll-player-accent:has(.wod20-roll .tray-roll-area) .message-header {
+    border-left: 3px solid color-mix(in srgb, var(--wod20-roll-player-color) 35%, transparent) !important;
+}
+
+.theme-dark :is(#chat, #chat-notifications, #ui-right-column-1)
+  .message.wod20-roll-player-accent:has(.wod20-roll .tray-roll-area)
+  .message-header .message-sender {
+    color: color-mix(in srgb, var(--wod20-roll-player-color) 40%, #f2f2f2) !important;
+}
+
+.theme-light :is(#chat, #chat-notifications, #ui-right-column-1)
+  .message.wod20-roll-player-accent:has(.wod20-roll .tray-roll-area)
+  .message-header .message-sender {
+    color: color-mix(in srgb, var(--wod20-roll-player-color) 40%, #262626) !important;
 }
