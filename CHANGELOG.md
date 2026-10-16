@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.2 — 2026-10-15
+- **Readability:** enlarge compact roll-card fonts ~15–20% and native dice from 38px to 45px (about 18%); add modest spacing while preserving the compact layout and wrapping.
+- **Speaker identification:** apply Foundry chat author's player color as a low-intensity blend on speaker name and slim header stripe, dark/light aware. Only native WoD20 roll messages are tinted; no color available means no accent.
+- **Safety:** no changes to roll evaluation, result flags, Paradox detection/addition, Actor data, or Dice So Nice; color is strictly validated before CSS injection.
+- **Tests:** mock author-color cases, CSS/manifest guards, prior roll/Paradox tests and GitHub packaging workflow. Live Foundry v14 visual verification still pending.
+- **Rollback:** restore v0.2.1 (smaller compact version) or v0.2.0 (pre-compact). 
+
+
 ## v0.2.1 — 2026-10-15
 - **Compact by default:** reduce native WoD20 dice chat-card height by approximately half in a 293px-wide browser mock; attack examples 336→149px and damage 354→165px.
 - **Presentation:** shorter chat header and action title, inline pool/difficulty information, 28px result strip, 38px dice with tighter wrap, reduced margins and compact Paradox prompt/buttons.
