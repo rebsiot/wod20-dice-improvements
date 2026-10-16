@@ -2,6 +2,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/roll-result-formatting.test.js && node tests/runtime-hook.test.js && node tests/paradox.test.js && node tests/compact-css.test.js"
+    "test": "node tests/roll-result-formatting.test.js && node tests/runtime-hook.test.js && node tests/paradox.test.js && node tests/compact-css.test.js && node tests/speaker-accent.test.js"
   }
 }
