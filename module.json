@@ -2,8 +2,8 @@
   "id": "wod20-dice-improvements",
   "type": "module",
   "title": "WoD20 Dice Improvements",
-  "description": "Compact native WoD20 roll cards, success/failure formatting, and Mage Paradox dice highlighting with manual Add/Ignore resolution.",
-  "version": "0.2.1",
+  "description": "Readable compact native WoD20 roll cards with 45px dice, subtle player-colored headers, and Mage Paradox dice highlighting with manual Add/Ignore resolution.",
+  "version": "0.2.2",
   "authors": [
     {
       "name": "rebsiot",
@@ -35,5 +35,5 @@
   "changelog": "https://github.com/rebsiot/wod20-dice-improvements/blob/main/CHANGELOG.md",
   "bugs": "https://github.com/rebsiot/wod20-dice-improvements/issues",
   "manifest": "https://github.com/rebsiot/wod20-dice-improvements/releases/latest/download/module.json",
-  "download": "https://github.com/rebsiot/wod20-dice-improvements/releases/download/v0.2.1/wod20-dice-improvements-0.2.1.zip"
+  "download": "https://github.com/rebsiot/wod20-dice-improvements/releases/download/v0.2.2/wod20-dice-improvements-0.2.2.zip"
 }
