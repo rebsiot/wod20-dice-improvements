@@ -1,8 +1,12 @@
-# WoD20 Dice Improvements
+# WoD20 Dice Improvements + Paradox
 
-**v0.2.2 | Foundry VTT v14 | WoD20 worldofdarkness v7.3.1**
+**v0.2.3 | Foundry VTT v14 | WoD20 worldofdarkness v7.3.1**
 
-This module formats native WoD20 roll cards and now includes the Paradox-die highlighting and manual Paradox accounting from the user-provided `wod20-paradox` source. **Disable the original Paradox module to use this module's Paradox functionality.** Do not permanently delete your working original until a live test passes.
+Native WoD20 chat cards are more readable, with compact dice and clearer success/failure results. Mage spell rolls also highlight Paradox dice and show **Add Paradox / Ignore** controls when Paradox is generated.
+
+**In Foundry Manage Modules:** Enable **WoD20 Dice Improvements + Paradox** (`wod20-dice-improvements`). Keep the older **WoD20 Paradox** (`wod20-paradox`) **disabled**, but backed up. Running both Paradox processors could count the same roll twice. Updating the module does not switch either checkbox for you.
+
+**Example:** A Mage with two temporary Paradox rolls four native WoD20 dice. The first two show as grayscale in the Foundry ChatMessage. If a marked die triggers Paradox, **Add Paradox** applies the change to the Actor once you choose it; **Ignore** leaves the Actor unchanged. Dice So Nice animation by itself is not the chat result.
 
 ## Features
 
@@ -30,12 +34,12 @@ Enable WoD20 Dice Improvements in the world and hard-refresh your client. To ins
 
 1. Back up `Z:\Data\modules\wod20-paradox`, the existing Dice Improvements folder and relevant world data.
 2. **Disable** `wod20-paradox` in Manage Modules. Do not delete it yet.
-3. Upgrade and enable **WoD20 Dice Improvements v0.2.2**, then restart/hard-refresh.
+3. Upgrade and enable **WoD20 Dice Improvements + Paradox v0.2.3**, then restart/hard-refresh.
 4. Perform the spell-casting smoke test below before removing any old files.
 
 ## Readability and speaker-color live test
 
-Update to v0.2.2 and hard-refresh (`Ctrl+Shift+R`) in the world. Make Bite/Knife Attack and Knife Damage rolls. Confirm titles, trait/difficulty text and dice are large enough to read without squinting, six 45px dice fit on one row at a typical chat sidebar width, and larger pools wrap naturally. The sender name should take on a soft tint from the user who posted that roll, with a subtle left header line. Other text messages, dice colors and green/red results should not change. If the user has no accessible color, the standard uncolored header remains.
+Update to v0.2.3 and hard-refresh (`Ctrl+Shift+R`) in the world. Make Bite/Knife Attack and Knife Damage rolls. Confirm titles, trait/difficulty text and dice are large enough to read without squinting, six 45px dice fit on one row at a typical chat sidebar width, and larger pools wrap naturally. The sender name should take on a soft tint from the user who posted that roll, with a subtle left header line. Other text messages, dice colors and green/red results should not change. If the user has no accessible color, the standard uncolored header remains.
 
 Check a Mage Paradox roll: selected dice remain grayscale and the Add/Ignore prompt stays visible and clickable. v0.2.1 had reached about half the original card height in a 293px browser mock; v0.2.2 intentionally grows a little to improve legibility. **Exact resulting height and color contrast in live Foundry have not been measured.**
 
@@ -48,7 +52,7 @@ On a Mage with **2 temporary Paradox already accumulated**, cast a native **Coin
 ## Verification / limitations
 
 - Static syntax and mock tests pass (Mage/PC Paradox storage, roll matching, display, Add/Ignore, maximum, old-module guard and failed final flag write).
-- **The v0.2.2 layout and user-color accent have not yet been live-tested in Foundry.** Player Actions card content, GM/player permissions, Dice So Nice, UI rerenders and multiple simultaneous clients still need live verification.
+- **The compact layout, player-color accents, and two-client Paradox exactly-once behavior have not yet been fully live-tested in Foundry.** Player Actions card content, GM/player permissions, Dice So Nice, UI rerenders and multiple simultaneous clients still need live verification.
 - Preexisting old Paradox message flags are preserved but are not migrated into new flags. If a chat card becomes stuck at **Resolving** after a partial update, inspect Actor Paradox rather than clicking again.
 - The underlying original Paradox logic still uses localized Coincidental/Vulgar markers and each existing Paradox die that rolls a 1 as the trigger.
 
