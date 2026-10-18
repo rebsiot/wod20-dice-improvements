@@ -6,7 +6,7 @@ Native WoD20 chat cards are more readable, with compact dice and clearer success
 
 **In Foundry Manage Modules:** Enable **WoD20 Dice Improvements + Paradox** (`wod20-dice-improvements`). Keep the older **WoD20 Paradox** (`wod20-paradox`) **disabled**, but backed up. Running both Paradox processors could count the same roll twice. Updating the module does not switch either checkbox for you.
 
-**Example:** A Mage with two temporary Paradox rolls four native WoD20 dice. The first two show as grayscale in the Foundry ChatMessage. If a marked die triggers Paradox, **Add Paradox** applies the change to the Actor once you choose it; **Ignore** leaves the Actor unchanged. Dice So Nice animation by itself is not the chat result.
+**Example:** A Mage with two temporary Paradox rolls four native WoD20 dice. The first two show as grayscale in the Foundry ChatMessage. If a marked die triggers Paradox, **Add Paradox** requests the Actor update; **Ignore** leaves the Actor unchanged. A two-client test for duplicate accounting is still pending. Dice So Nice animation by itself is not the chat result.
 
 ## Features
 
