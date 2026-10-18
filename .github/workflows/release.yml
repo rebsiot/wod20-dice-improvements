@@ -52,4 +52,4 @@ jobs:
           awk '/^## v/ { if (seen++) exit } seen { print }' CHANGELOG.md > /tmp/wod20-release-notes.md
           test -s /tmp/wod20-release-notes.md
           gh release create "$tag" "${{ steps.pack.outputs.archive }}" module.json \
-            --target "$GITHUB_SHA" --title "$tag" --notes-file /tmp/wod20-release-notes.md
+            --target "$GITHUB_SHA" --title "WoD20 Dice Improvements + Paradox $tag" --notes-file /tmp/wod20-release-notes.md
