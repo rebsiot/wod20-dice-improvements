@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.2.3 — 2026-10-18
+
+- **Renamed:** The Foundry Manage Modules display title now reads **WoD20 Dice Improvements + Paradox** so the combined module is distinguishable from the older standalone WoD20 Paradox module.
+- **Unchanged:** Foundry module ID `wod20-dice-improvements`, repository URL, manifest update channel, native WoD20 rolls, Paradox Add/Ignore behavior, chat styling, saved flags, Actors and settings. No migrations.
+- **Before updating:** Back up the module folder if desired; **keep standalone `wod20-paradox` disabled** while the integrated processor is active. Do not activate both processors.
+- **Install/update:** Update this module in Foundry Setup, launch the world and hard-refresh; check the new name in Manage Modules. Enabled state is per world, not controlled by GitHub.
+- **Checks:** Build/Node tests and release artifact checks; **no live Foundry multi-client Paradox test for this patch**.
+- **Rollback:** Reinstall the complete v0.2.2 release if needed; existing Actors and Paradox flags are not migrated by this patch.
+
 ## v0.2.2 — 2026-10-15
 - **Readability:** enlarge compact roll-card fonts ~15–20% and native dice from 38px to 45px (about 18%); add modest spacing while preserving the compact layout and wrapping.
 - **Speaker identification:** apply Foundry chat author's player color as a low-intensity blend on speaker name and slim header stripe, dark/light aware. Only native WoD20 roll messages are tinted; no color available means no accent.
