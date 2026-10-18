@@ -1,4 +1,4 @@
-name: Publish WoD20 Dice Improvements
+name: Publish WoD20 Dice Improvements + Paradox
 
 on:
   push:
@@ -48,5 +48,8 @@ jobs:
             echo "Release $tag already exists; bump module version for a new release."
             exit 0
           fi
+          # Show only this version's changes on GitHub, not the whole history.
+          awk '/^## v/ { if (seen++) exit } seen { print }' CHANGELOG.md > /tmp/wod20-release-notes.md
+          test -s /tmp/wod20-release-notes.md
           gh release create "$tag" "${{ steps.pack.outputs.archive }}" module.json \
-            --target "$GITHUB_SHA" --title "$tag" --notes-file CHANGELOG.md
+            --target "$GITHUB_SHA" --title "$tag" --notes-file /tmp/wod20-release-notes.md
